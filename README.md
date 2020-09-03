@@ -1,2 +1,4 @@
-# operating-systems-lab
-Lab works from Operating Systems Lab, Sem 3
+# Operating Systems Lab
+
+
+Lab work submissions from Operating Systems Lab, Sem 3
