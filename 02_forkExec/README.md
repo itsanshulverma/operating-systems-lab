@@ -1,5 +1,4 @@
- ## WAP (using fork() and/or exec() commands) where parent and child 
-execute:
+ ## WAP (using fork() and/or exec() commands) where parent and child execute:
 
 
 
