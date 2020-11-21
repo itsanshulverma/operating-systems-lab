@@ -96,40 +96,40 @@ void calcWaitingTime(struct Process *p, int n)
 
 void printAvgTime(struct Process *p, int n)
 {
-    // sortAccArrivalTime(p, n);
-	// calcCompletionTime(p, n);
-	// calcTurnAroundTime(p, n);
-	// calcWaitingTime(p, n);
-    // sortAccPID(p, n);
+    sortAccArrivalTime(p, n);
+	calcCompletionTime(p, n);
+	calcTurnAroundTime(p, n);
+	calcWaitingTime(p, n);
+    sortAccPID(p, n);
 
-	double end;
-  	int smallest, count = 0;
-  	double totalWaitingTime = 0.0;
-  	double totalTurnAroundTime = 0.0;
-  	struct 	Process temp[n + 1];
+	// double end;
+  	// int smallest, count = 0;
+  	// double totalWaitingTime = 0.0;
+  	// double totalTurnAroundTime = 0.0;
+  	// struct 	Process temp[n + 1];
 
-	for (int i = 0; i < n; i++)
-    temp[i] = p[i];
+	// for (int i = 0; i < n; i++)
+    // temp[i] = p[i];
 
-  	smallest = n + 1;
-  	temp[smallest].burstTime = 999;
-  	for (double time = 0; count != n; time++) {
-    	for (int i = 0; i < n; i++) {
-    		if (p[i].arrivalTime <= time &&
-          	p[i].burstTime < temp[smallest].burstTime &&
-          	p[i].burstTime > 0) {
-        	smallest = i;
-      		}
-    	}
-    	temp[smallest].burstTime--;
-    	if (temp[smallest].burstTime == 0) {
-      		count++;
-      		end = time + 1;
-      		p[count].waitingTime +=
-          end - p[smallest].arrivalTime - temp[smallest].burstTime;
-      		p[count].turnAroundTime += end - p[smallest].arrivalTime;
-    	}
-  	}
+  	// smallest = n + 1;
+  	// temp[smallest].burstTime = 999;
+  	// for (double time = 0; count != n; time++) {
+    // 	for (int i = 0; i < n; i++) {
+    // 		if (p[i].arrivalTime <= time &&
+    //       	p[i].burstTime < temp[smallest].burstTime &&
+    //       	p[i].burstTime > 0) {
+    //     	smallest = i;
+    //   		}
+    // 	}
+    // 	temp[smallest].burstTime--;
+    // 	if (temp[smallest].burstTime == 0) {
+    //   		count++;
+    //   		end = time + 1;
+    //   		p[count].waitingTime +=
+    //       end - p[smallest].arrivalTime - temp[smallest].burstTime;
+    //   		p[count].turnAroundTime += end - p[smallest].arrivalTime;
+    // 	}
+  	// }
 
   	// Printing Process Info
 	cout << " SRTF CPU Scheduling" << endl;
